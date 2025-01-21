@@ -7,6 +7,7 @@ import Programs from "./components/Programs";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import Admin from "./components/Admin"; // Import the Admin page
+import Register from "./components/Register";
 import axios from "axios";
 import "./App.css";
 
