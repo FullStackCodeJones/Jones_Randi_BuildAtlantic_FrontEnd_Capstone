@@ -1,17 +1,23 @@
-// Footer.jsx
 import React from "react";
 
 const Footer = () => {
   return (
-    <footer
-      style={{
-        padding: "1rem",
-        backgroundColor: "transparent",
-        color: "black",
-        textAlign: "center",
-      }}
-    >
-      <p>© Build Atlantic. All Rights Reserved.</p>
+    <footer className="footer">
+      <div className="footer-content">
+        <div className="logos">
+          <img
+            src="/public/images/logo-color.png"
+            alt="Build Atlantic Logo"
+            className="footer-logo"
+          />
+          <img
+            src="/public/images/Atlantic-County-Government-logo.jpg"
+            alt="Atlantic County Government Logo"
+            className="footer-logo"
+          />
+        </div>
+        <p>© Build Atlantic. All Rights Reserved.</p>
+      </div>
     </footer>
   );
 };

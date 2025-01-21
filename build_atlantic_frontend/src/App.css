@@ -1,42 +1,287 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
+:root {
+  --bg-color-white: #ffffff; /* White */
+  --bg-color-blue: #add8e6; /* Medium Light Blue */
+  --bg-color-gold: #ffd700; /* Gold */
+  --text-color-dark: #010747; /* Dark text for contrast */
+  --text-color-light: #ffffff; /* Light text */
+  --primary-color: var(--bg-color-blue); /* Use city blue as primary */
+  --accent-color: var(--bg-color-gold); /* Use gold as accent */
+  --hover-color: rgba(0, 0, 0, 0.1); /* Light gray for hover effects */
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--bg-color-white);
+  color: var(--text-color-dark);
+  line-height: 1.6;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  box-sizing: border-box;
+}
+header {
+  display: flex;
+  justify-content: space-between; /* Position logos to the top left and top right */
+  padding: 1rem 2rem;
+  width: 100%;
+}
+
+.logo-left,
+.logo-right {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  max-height: 60px; /* Adjust as needed for your logos */
+}
+
+.logo-left img,
+.logo-right img {
+  max-height: 40px; /* Ensure logos fit within the header */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 1;
+  text-align: center;
+  justify-content: center;
+  align-items: centers;
+}
+
+p {
+  margin: 0 0 1rem 0;
+  padding: 0 1rem;
+  text-align: center;
+  justify-content: center;
+  width: 80%;
+  line-height: 1.8;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: var(--accent-color);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--primary-color);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: var(--text-color-light);
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--accent-color);
+}
+
+/* Navbar Styling */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%; /* Stretch across the entire top */
+  z-index: 1000; /* Ensures it stays on top */
+  background-color: var(--primary-color);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: flex;
+}
+
+nav a {
+  color: var(--text-color-light);
+  font-weight: bold;
+}
+
+nav a:hover {
+  color: var(--accent-color);
+}
+
+/* Section Styling */
+section {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 1rem;
+  padding-top: 4rem;
+  box-sizing: border-box;
+  text-align: center;
+  justify-content: center;
+}
+
+form {
+  max-width: 500px;
+  margin: 2rem auto;
   padding: 2rem;
+  border: 1px solid var(--hover-color);
+  border-radius: 10px;
+  background-color: var(--bg-color-white);
+  justify-content: center;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem;
+  margin: 1rem 0;
+  border: 1px solid var(--hover-color);
+  border-radius: 5px;
+  font-size: 1rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--accent-color);
 }
 
 .card {
-  padding: 2em;
+  background-color: var(--bg-color-white);
+  border: 1px solid var(--hover-color);
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  margin: 1rem auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.read-the-docs {
-  color: #888;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.card-content {
+  font-size: 1rem;
+  color: var(--text-color-dark);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  nav {
+    justify-content: center;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: row;
+    text-align: center;
+  }
+
+  form {
+    width: 90%;
+  }
+
+  section {
+    padding: 1rem;
+  }
+
+  .card {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul {
+    gap: 0.5rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-size: 1.5rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  p {
+    font-size: 0.9rem;
+    justify-content: center;
+    text-align: center;
+  }
+
+  button {
+    font-size: 0.9rem;
+    padding: 0.5rem;
+  }
+}
+/* Footer Styling */
+.footer {
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Stretch across the page */
+
+  color: var(--text-color-light); /* White text for contrast */
+  text-align: center;
+  padding: 1rem 0; /* Add spacing */
+
+  z-index: 100; /* Ensures it stays above other content */
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center all content */
+  gap: 1rem; /* Space between elements */
+}
+
+.logos {
+  display: flex;
+  justify-content: center; /* Horizontally center the logos */
+  align-items: center; /* Vertically align the logos */
+  gap: 1rem; /* Add space between logos */
+}
+
+.footer-logo {
+  max-height: 50px; /* Prevent logos from being too large */
+  width: auto; /* Maintain aspect ratio */
+}
+
+.footer p {
+  margin: 0;
+  font-size: 0.9rem; /* Keep text legible but compact */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-logo {
+    max-height: 40px; /* Scale down logos on smaller screens */
+  }
+
+  .footer p {
+    font-size: 0.8rem; /* Adjust text size */
+  }
 }
